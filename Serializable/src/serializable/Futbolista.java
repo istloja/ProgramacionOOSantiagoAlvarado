@@ -8,17 +8,65 @@ private String apellido;
 private int numero;
 private String Posicion;
 private double sueldo;
+private int pases;
+private double asistencias;
+private double kmreco;
+private int golesperdidos;
 
     public Futbolista() {
     }
 
-    public Futbolista(String nombre, String apellido, int numero, String Posicion, double sueldo) {
+    public Futbolista(String nombre, String apellido, int numero, String Posicion, double sueldo, int pases, double asistencias, double kmreco, int golesperdidos) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.numero = numero;
         this.Posicion = Posicion;
         this.sueldo = sueldo;
+        this.pases = pases;
+        this.asistencias = asistencias;
+        this.kmreco = kmreco;
+        this.golesperdidos = golesperdidos;
     }
+
+    Futbolista(String simon, String vargas, int i, String delantero, double d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+
+    public int getPases() {
+        return pases;
+    }
+
+    public void setPases(int pases) {
+        this.pases = pases;
+    }
+
+    public double getAsistencias() {
+        return asistencias;
+    }
+
+    public void setAsistencias(double asistencias) {
+        this.asistencias = asistencias;
+    }
+
+    public double getKmreco() {
+        return kmreco;
+    }
+
+    public void setKmreco(double kmreco) {
+        this.kmreco = kmreco;
+    }
+
+    public int getGolesperdidos() {
+        return golesperdidos;
+    }
+
+    public void setGolesperdidos(int golesperdidos) {
+        this.golesperdidos = golesperdidos;
+    }
+
+   
 
     public String getNombre() {
         return nombre;

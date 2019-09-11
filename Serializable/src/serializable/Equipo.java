@@ -9,15 +9,30 @@ public class Equipo implements Serializable {
     private int numero_jugador;
     private String director;
     private Futbolista futbolista;
+    private int titulos;
+
     public Equipo(String ganadores, String azul, int par, String carlos_Silva, Futbolista futbolista1) {
     }
 
-    public Equipo(String nombre, String color, int numero_jugador, String director) {
+    public Equipo(String nombre, String color, int numero_jugador, String director, Futbolista futbolista, int titulos) {
         this.nombre = nombre;
         this.color = color;
         this.numero_jugador = numero_jugador;
         this.director = director;
+        this.futbolista = futbolista;
+        this.titulos = titulos;
     }
+    
+    
+
+    public int getTitulos() {
+        return titulos;
+    }
+
+    public void setTitulos(int titulos) {
+        this.titulos = titulos;
+    }
+    
 
     public Equipo(Futbolista futbolista) {
         this.futbolista = futbolista;
@@ -64,7 +79,7 @@ public class Equipo implements Serializable {
     }
     
     public static void main(String[] args) {
-    Equipo obj = new Equipo ("ganadores","azul", 18, "Carlos Silva", new Futbolista("Simon", "Vargas", 8, "Delantero", 526.89));
+    Equipo obj = new Equipo ("ganadores","azul", 18, "Carlos Silva", new Futbolista("Simon", "Vargas", 8, "Delantero", 526.89),12);
     }
 
 
