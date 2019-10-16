@@ -59,6 +59,10 @@ public class LeeryEscribir {
      // objet.escribirArchivo("C:\\Users\\Usuario\\Desktop\\rutaarchivo.txt", (Persona) lista);
         objet.escribir_lista("C:\\Users\\Usuario\\Desktop\\rutaarchivo.txt",lista);
         objet.leerArchivo("C:\\Users\\Usuario\\Desktop\\rutaarchivo.txt");
+        List<Persona>lista1=objet.lista("C:\\Users\\Usuario\\Desktop\\rutaarchivo.txt");
+        for (Persona persona : lista1) {
+            System.out.println(persona.getNombre());
+        }
     }
 
     public void escribir_lista(String direccion_archivo, List<Persona> listaPersona) {
@@ -72,6 +76,23 @@ public class LeeryEscribir {
         } catch (Exception e) {
             System.out.println("Error" + e);
         }
+    }
+    public List <Persona> lista (String direccion_archivo){
+        List<Persona>lista=new ArrayList<Persona>();
+         try {
+            ObjectInputStream leer = new ObjectInputStream(new FileInputStream(direccion_archivo));
+            Object aux = leer.readObject();
+
+            while (aux != null) {
+                Persona persona = (Persona) aux;
+                lista.add(persona);      
+                aux = leer.readObject();
+                
+            }
+        } catch (Exception e) {
+            System.out.println("error" + e);
+        }
+         return lista;
     }
 
 }
